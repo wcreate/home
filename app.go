@@ -20,16 +20,5 @@ func main() {
 	// user centre
 	wuc.InitHandles(m)
 
-	run(m)
-}
-
-func run(m *macaron.Macaron) {
-	cfg := macaron.Config()
-	web, err := cfg.GetSection("web")
-	if err != nil {
-		panic(err)
-	}
-	ip := web.Key("ip").MustString("0.0.0.0")
-	port := web.Key("port").MustInt(8080)
-	m.Run(ip, port)
+	m.Run(tkits.WebListenIP, tkits.WebPort)
 }
