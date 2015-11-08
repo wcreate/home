@@ -37,6 +37,5 @@ func SpiderFunc() macaron.Handler {
 			http.Error(res, http.StatusText(http.StatusForbidden), http.StatusForbidden)
 			return
 		}
-
 	}
 }
